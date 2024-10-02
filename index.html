@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero" required>
+    <button onclick="gerarTabuada()">Gerar Tabuada</button>
+    <h2>Resultados:</h2>
+    <pre id="resultado"></pre>
+
+    <script>
+        function gerarTabuada() {
+            const numero = document.getElementById('numero').value;
+            let resultado = '';
+            let i = 1;
+
+            while (i <= 10) {
+                resultado += `${numero} x ${i} = ${numero * i}\n`;
+                i++;
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>
